@@ -5,8 +5,19 @@ import { AppService } from './app.service';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  @Get('health')
+  getHealth(): string {
+    return this.appService.getHealth();
+  }
+
+  @Get('info')
+  getAppInfo(): { version: string; environment: string } {
+    return this.appService.getAppInfo();
+  }
+
+  @Get('log')
+  logMessage(): string {
+    this.appService.logMessage();
+    return 'Log message triggered';
   }
 }
