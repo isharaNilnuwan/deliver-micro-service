@@ -6,5 +6,5 @@ export class Type extends BaseEntity {
   id: number;
 
   @Column({ unique: true })
-  jokeType: string;
+  type: string;
 }

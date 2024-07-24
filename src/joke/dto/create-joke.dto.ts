@@ -2,10 +2,10 @@ import { IsString } from 'class-validator';
 
 export class CreateJokeDTO {
   @IsString()
-  jokeType: string;
+  type: string;
 
   @IsString()
-  joke: string;
+  content: string;
 
   @IsString()
   submitter: string;

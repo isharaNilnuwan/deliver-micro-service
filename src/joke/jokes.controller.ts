@@ -17,13 +17,13 @@ import {
   
     @Post('create')
     public async createJoke(@Body() createUserDto: CreateJokeDTO): Promise<Joke> {
-        console.log("#$ create joke")
+        console.log("#$ create joke", createUserDto)
       return await this.jokeService.createJoke(createUserDto);
     }
   
     @Get('all')
     public async getJokes(): Promise<Joke[]> {
-        console.log("#$ get user");
+        console.log("#$ get jokes");
       return await this.jokeService.getUsers();
     }
   

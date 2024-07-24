@@ -35,11 +35,7 @@ export class AppModule implements NestModule{
       .apply(ValidateApiKeyMiddleware)
       .forRoutes(
         { path: 'joke/create', method: RequestMethod.POST },
-        { path: 'joke/edit', method: RequestMethod.PATCH },
-        { path: 'joke/delete', method: RequestMethod.DELETE },
-        { path: 'types/create', method: RequestMethod.POST },
-        { path: 'types/edit', method: RequestMethod.PATCH },
-        { path: 'types/delete', method: RequestMethod.DELETE },
+        { path: 'type/create', method: RequestMethod.POST }
 
       );
   }

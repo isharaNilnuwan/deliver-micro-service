@@ -13,31 +13,31 @@ import {
   
   @Controller('type')
   export class TypeController {
-    constructor(private jokeService: TypeService) {}
+    constructor(private typeService: TypeService) {}
   
     @Post('create')
-    public async createType(@Body() createUserDto: CreateTypeDTO): Promise<Type> {
-        console.log("#$ create joke")
-      return await this.jokeService.createType(createUserDto);
+    public async createType(@Body() createTypeDto: CreateTypeDTO): Promise<Type> {
+        console.log("#$ create type", createTypeDto)
+      return await this.typeService.createType(createTypeDto);
     }
   
     @Get('all')
     public async getTypes(): Promise<Type[]> {
-        console.log("#$ get user");
-      return await this.jokeService.getTypes();
+        console.log("#$ get types");
+      return await this.typeService.getTypes();
     }
   
   
     @Patch('/edit/:userId')
     public async editType(
-      @Body() createUserDto: CreateTypeDTO,
+      @Body() createTypeDto: CreateTypeDTO,
       @Param('userId') userId: number,
     ): Promise<Type> {
-      return await this.jokeService.editType(userId, createUserDto);
+      return await this.typeService.editType(userId, createTypeDto);
     }
   
     @Delete('/delete/:typeId')
     public async deleteType(@Param('typeId') userId: number) {
-      return await this.jokeService.deleteType(userId);
+      return await this.typeService.deleteType(userId);
     }
   }

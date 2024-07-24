@@ -6,12 +6,12 @@ export class Joke extends BaseEntity {
   id: number;
 
   @Column()
-  jokeType: string;
+  type: string;
 
   @Column()
-  joke: string;
+  content: string;
 
-  @Column()
-  submitter: string;
+  @Column({nullable: true })
+  submitter?: string;
 
 }
